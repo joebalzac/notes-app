@@ -19,8 +19,8 @@ interface Props {
 const NoteForm = ({ notes, setNotes }: Props) => {
   const [formData, setFormData] = useState({
     title: "",
-    category: "work",
-    priority: "medium",
+    category: "",
+    priority: "",
     description: "",
   });
 
@@ -33,7 +33,7 @@ const NoteForm = ({ notes, setNotes }: Props) => {
   ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value.toLowerCase(),
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -47,8 +47,8 @@ const NoteForm = ({ notes, setNotes }: Props) => {
 
     setFormData({
       title: "",
-      category: "Work",
-      priority: "Medium",
+      category: "",
+      priority: "",
       description: "",
     });
   };
@@ -77,9 +77,9 @@ const NoteForm = ({ notes, setNotes }: Props) => {
             value={formData.priority}
             onChange={handleChange}
             options={[
-              { value: "High", label: "High" },
-              { value: "Medium", label: "Medium" },
-              { value: "Low", label: "Low" },
+              { value: "High", label: "🔴 High" },
+              { value: "Medium", label: "🟠 Medium" },
+              { value: "Low", label: "🟢 Low" },
             ]}
           />
 
@@ -89,9 +89,9 @@ const NoteForm = ({ notes, setNotes }: Props) => {
             value={formData.category}
             onChange={handleChange}
             options={[
-              { value: "Work", label: "Work" },
-              { value: "Personal", label: "Personal" },
-              { value: "Ideas", label: "Ideas" },
+              { value: "Work", label: "🏢 Work" },
+              { value: "Personal", label: "🏠 Personal" },
+              { value: "Ideas", label: "💡 Ideas" },
             ]}
           />
 

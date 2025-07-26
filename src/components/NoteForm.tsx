@@ -3,7 +3,7 @@ import TextInput from "./inputs/TextInput";
 import SelectInput from "./inputs/SelectInput";
 import TextAreaInput from "./inputs/TextAreaInput";
 
-export interface Note {
+export interface MainNote {
   id: number;
   title: string;
   category: string;
@@ -12,8 +12,8 @@ export interface Note {
 }
 
 interface Props {
-  notes: Note[];
-  setNotes: (notes: Note[]) => void;
+  notes: MainNote[];
+  setNotes: (notes: MainNote[]) => void;
 }
 
 const NoteForm = ({ notes, setNotes }: Props) => {
